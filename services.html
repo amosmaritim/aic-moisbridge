@@ -27,6 +27,41 @@
         <li><strong>Bible Study:</strong> 12:00 PM – 3:00 PM</li>
       </ul>
       <p>We welcome all ages to join us in worship, learning, and fellowship every Sunday.</p>
+
+
+ <h2>📖 Bible Verse Search</h2>
+  <input type="text" id="verseInput" placeholder="Enter verse (e.g., John 3:16)" />
+  <button onclick="searchBible()">Search</button>
+  <p id="verseOutput" style="margin-top: 1rem; font-style: italic;"></p>
+
+
+<script>
+  function searchBible() {
+    const input = document.getElementById("verseInput").value;
+    const output = document.getElementById("verseOutput");
+
+    fetch(`https://bible-api.com/${encodeURIComponent(input)}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.verse) {
+          output.innerText = `${data.reference}: ${data.text}`;
+        } else if (data.text) {
+          output.innerText = `${data.reference}:\n${data.text}`;
+        } else {
+          output.innerText = "Verse not found. Please check your input.";
+        }
+      })
+      .catch(error => {
+        output.innerText = "An error occurred while fetching the verse.";
+        console.error(error);
+      });
+  }
+</script>
+
+
+
+
+      
     </section>
   </main>
 
