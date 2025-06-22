@@ -3,147 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="HJMkn5KVstdWDqDMVpmO4fIPdPrv0jJRzJ_ozgvU_hc" />
-   <title>AIC Moisbridge | Christian Church in Moisbridge, Kenya</title>
-
-  <!-- Meta Description (for Google Search results) -->
-  <meta name="description" content="AIC Moisbridge is a Christian church in Moisbridge, Kenya. Join us for Sunday School, worship services, youth programs, and Bible study. Faith Forward. Love Always." />
-
-  <!-- Optional: Meta Keywords (Google mostly ignores this, but other engines might use it) -->
-  <meta name="keywords" content="AIC Moisbridge, church in Moisbridge, Christian church Kenya, youth service, Sunday service, Bible study, Pastor Wabule" />
-
-  <!-- Google Site Verification (replace YOUR-CODE with actual code from Search Console) -->
-  <meta name="google-site-verification" content="YOUR-CODE-HERE" />
-
-  <!-- Page Icon (optional if you have a favicon) -->
-  <link rel="icon" href="favicon.ico" />
-
-  <!-- Your CSS file -->
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f8fa;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      font-style: italic;
-    }
-    nav {
-      background-color: #34495e;
-      text-align: center;
-    }
-    nav a {
-      display: inline-block;
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #3d566e;
-    }
-    main {
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    .verse {
-      font-style: italic;
-      background-color: #ecf0f1;
-      padding: 1rem;
-      border-left: 5px solid #3498db;
-    }
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+  <title>AIC Moisbridge</title>
+  <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
   <header>
     <h1>AIC Moisbridge</h1>
-    <p>"Faith Forward. Love Always."</p>
+    <p class="motto">Faith Forward. Love Always.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#verse">Verse of the Week</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main>
-    <section id="about">
+    <section class="hero">
       <h2>Welcome to AIC Moisbridge</h2>
-      <p>We are a Christ-centered community located in Moisbridge, Kenya. Led by Pastor Wabule, we are dedicated to growing in faith and serving our community with love. Join us every Sunday to worship, learn, and connect with God and one another.</p>
+      <p>Join us every Sunday as we grow in faith and fellowship.</p>
     </section>
 
-    <section id="schedule">
-      <h2>Sunday Schedule</h2>
-      <ul>
-        <li>8:00 AM – 10:00 AM: Sunday School & First Service</li>
-        <li>10:00 AM – 12:00 PM: Second Service & Youth Service</li>
-        <li>12:00 PM – 3:00 PM: Bible Study</li>
-      </ul>
-    </section>
-
-    <section id="verse">
-      <h2>Verse of the Week</h2>
-      <div class="verse">
-        “Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.”<br />
-        — Matthew 5:16 (NIV)
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:aicmoisbridge@gmail.com">aicmoisbridge@gmail.com</a></p>
-        <section id="bible-search" style="padding: 2rem; background: #f9f9f9;">
-  <h2>📖 Bible Verse Search</h2>
-  <input type="text" id="verseInput" placeholder="Enter verse (e.g., John 3:16)" />
-  <button onclick="searchBible()">Search</button>
-  <p id="verseOutput" style="margin-top: 1rem; font-style: italic;"></p>
-</section>
-
-<script>
-  function searchBible() {
-    const input = document.getElementById("verseInput").value;
-    const output = document.getElementById("verseOutput");
-
-    fetch(`https://bible-api.com/${encodeURIComponent(input)}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.verse) {
-          output.innerText = `${data.reference}: ${data.text}`;
-        } else if (data.text) {
-          output.innerText = `${data.reference}:\n${data.text}`;
-        } else {
-          output.innerText = "Verse not found. Please check your input.";
-        }
-      })
-      .catch(error => {
-        output.innerText = "An error occurred while fetching the verse.";
-        console.error(error);
-      });
-  }
-</script>
-
+    <section class="intro">
+      <h3>Our Mission</h3>
+      <p>To spread the Gospel of Jesus Christ, nurture believers, and serve the community with love and compassion.</p>
     </section>
   </main>
 
